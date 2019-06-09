@@ -1,5 +1,37 @@
-  // First we get the date, and then modify it to the adjusted date */
-  
+#!/usr/bin / env node
+'use strict';
+
+
+// set up a class for RSSSearch
+// We will assume the dictionary will come in the form of JSON
+// As it is a standard form of data transfer on the web and usable
+// by multiple langauges
+
+class RSSSearch {
+    constructor(dictionary, numberOfDays) {
+        this.dictionary = JSON.parse(dictionary);
+        this.numberOfDays = numberOfDays;
+        this.hasUpdated = new Set();
+        this.notUpdated = new Set();
+    }
+    // Set up with optional parameters to make testing a bit easier
+    
+    // First we get the date, and then modify it to the adjusted date */
+    adjustDate(num = this.numberOfDays, date = new Date()) {
+        if (date instanceof Date) {
+            date.setDate(date.getDate() - num);
+            console.log(date);
+            return date;
+        }
+        else {
+            return null;
+        }
+    }
+    // JSON supports arrays, strings and strings
+    // We will assume that all urls are going to be inside an array
+    
+}
+
 
   // Then we will cycle through the input and retrieve the RSS feed.  
 
@@ -23,4 +55,3 @@
   /* any other RSS feeds for that company, because they have updated one).  Then we repeat with the second, third, ect. */
   // If no RSS feeds are updated, we will add it to the not updated set.
   // Once all companies are checked we will print out a list of companies into the console or print the list.
-*/
