@@ -1,0 +1,15 @@
+{
+    "NPR": {
+        "Diane_Rehm" : "https://dianerehm.org/rss/npr/dr_podcast.xml",
+        "Planet_Money": "https://www.npr.org/rss/podcast.php?id=510289"
+
+    },
+    "NY_Times": {
+        "World": "https://rss.nytimes.com/services/xml/rss/nyt/World.xml",
+        "Business": "https://rss.nytimes.com/services/xml/rss/nyt/Business.xml",
+        "Science": "https://rss.nytimes.com/services/xml/rss/nyt/Science.xml"
+    },
+    "ITunes": {
+        "UnderTheSkin": "https://feeds.megaphone.fm/LM1344278906"
+    }
+}

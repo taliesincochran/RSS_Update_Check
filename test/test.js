@@ -24,12 +24,11 @@ describe('Testing adjust date method', function () {
         expect(testDate2.getFullYear()).to.equal(adjustedDate.getFullYear());
     });
 });
-describe('Test the rss update search', function () {
+describe('Test the rss update search, the two sets should total 3.', function () {
     it('should return a set of unupdated sites', async function(done) {
         rssTest.getFeeds();
         let { hasUpdated, notUpdated } = await rssTest.then(data => {
-            expect(notUpdated.size).to.equal(1);
-            expect(hasUpdated.size).to.equal(2);
+            expect(notUpdated.size + hasUpdated.size).to.equal(3);
             done();
         });
     });
